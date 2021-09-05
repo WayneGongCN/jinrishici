@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今日诗词</title>
+  <style>
+    @font-face {
+      src: url('./JXZhuoKai.woff')format("woff");
+      font-family:'JXZhuoKai';
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      font-size: 18px;
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 1rem;
+      color: rgb(17, 17, 17);
+      font-family: JXZhuoKai;
+    }
+    .content p {
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="content"></div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const content = params.get('content').split('\n').map(x => `<p>${x}</p>`).join('');
+    document.querySelector('.content').innerHTML = content;
+  </script>
+</body>
+</html>

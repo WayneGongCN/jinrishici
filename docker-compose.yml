@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  jinrishici_web:
+    image: nginx
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
+    networks:
+      - gateway
+
+networks:
+  gateway:
+    external:
+      name: gateway
