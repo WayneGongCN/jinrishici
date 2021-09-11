@@ -37,7 +37,7 @@ const template = ({ content, fullContent, title, dynasty, author }) =>
   `> ${content}\n\n\n「${
     Array.isArray(fullContent) && fullContent.length
       ? `[${title}](${encodeURI(
-          `https://jinrishici.waynegong.cn?content=${fullContent.join("\n")}`
+          `https://jinrishici.waynegong.cn?content=${fullContent.join("\n")}&title=${title}&author=${author}`
         )})`
       : title
   }」 ${dynasty}·${author}\n\n`;
